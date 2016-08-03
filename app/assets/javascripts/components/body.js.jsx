@@ -8,7 +8,7 @@ class Body extends React.Component {
   }
 
   componentDidMount() {
-    $.getJSON('/items/show', (response) => { this.setState({ items: response }) });
+    $.getJSON('/items.json', (response) => { this.setState({ items: response }) });
   }
 
   render() {

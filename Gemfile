@@ -43,5 +43,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'react-rails'
-end
 
+  gem 'responders'
+end
