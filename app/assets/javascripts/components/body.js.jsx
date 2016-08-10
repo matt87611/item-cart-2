@@ -5,10 +5,16 @@ var Body = React.createClass ({
 
   render: function() {
 
+    var itemsList = this.state.items.map(function(item) {
+      return (
+        <h2>item.name</h2>
+      );
+    });
+
     return (
       <div>
         <h1>All Items</h1>
-        {this.state.items[0].name}
+        {itemsList}
       </div>
     );
   }
