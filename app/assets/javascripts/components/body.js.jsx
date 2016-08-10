@@ -1,21 +1,15 @@
-class Body extends React.Component {
-  constructor() {
-    super();
+var Body = React.createClass ({
+  getInitialState: function() {
+    return { items: this.props.items }
+  },
 
-    this.state = {
-      items: []
-    }
-  }
+  render: function() {
 
-  componentDidMount() {
-    $.getJSON('/items.json', (response) => { this.setState({ items: response }) });
-  }
-
-  render() {
     return (
       <div>
         <h1>All Items</h1>
+        {this.state.items[0].name}
       </div>
     );
   }
-}; 
+}); 
