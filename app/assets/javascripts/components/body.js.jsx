@@ -4,7 +4,7 @@ var Body = React.createClass ({
   },
 
   eachItem: function(item) {
-    return (<Item>item={item}</Item>);
+    return (<Item item={item} key={item.id}/>);
   },
 
   render: function() {
