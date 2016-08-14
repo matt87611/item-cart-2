@@ -3,6 +3,10 @@ var Items = React.createClass ({
     return { items: this.props.items }
   },
 
+  eachItem: function(item) {
+    return (<Item item={item} key={item.id}/>);
+  },
+
   render: function() {
     return (
       <div>

@@ -6,8 +6,8 @@ var Item = React.createClass ({
   render: function() {
   	return (
       <tr>
-        <td><h3>item.name</h3></td>
-        <td><h3>item.description</h3></td>
+        <td>item.name</td>
+        <td>item.description</td>
       </tr>
   	);
   }

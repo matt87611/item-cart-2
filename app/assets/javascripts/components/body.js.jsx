@@ -1,11 +1,4 @@
 var Body = React.createClass ({
-  getInitialState: function() {
-    return { items: this.props.items }
-  },
-
-  eachItem: function(item) {
-    return (<Item item={item} key={item.id}/>);
-  },
 
   render: function() {
     return (
@@ -15,7 +8,7 @@ var Body = React.createClass ({
           <td>Name</td>
           <td>Description</td>
         </tr>
-        {Items}
+        <Items items={this.props.items}/>
       </div>
     );
   }
