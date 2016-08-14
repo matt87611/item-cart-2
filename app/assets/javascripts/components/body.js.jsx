@@ -11,6 +11,12 @@ var Body = React.createClass ({
     return (
       <div>
         <h1>All Items</h1>
+        <h3>
+          <tr>
+            <td>Name</td>
+            <td>Description</td>
+          </tr>
+        </h3>
         {this.state.items.map(this.eachItem)}
       </div>
     );

@@ -5,7 +5,10 @@ var Item = React.createClass ({
 
   render: function() {
   	return (
-      <h2>item.name</h2>
+      <tr>
+        <td><h3>item.name</h3></td>
+        <td><h3>item.description</h3></td>
+      </tr>
   	);
   }
 });
