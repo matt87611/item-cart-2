@@ -3,7 +3,7 @@ var NewItem = React.createClass({
     var name = this.refs.name.value;
     var description = this.refs.description.value;
     $.ajax({
-      url: '/items',
+      url: '/items.json',
       type: 'POST',
       data: { item: { name: name, description: description} },
       success: (response) => {

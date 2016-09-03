@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    fail
   	item = Item.find(params["id"])
   	item.update_attributes(item_params)
   	respond_with item, json: item
