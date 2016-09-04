@@ -8,13 +8,20 @@ var Body = React.createClass ({
     this.setState({ items: newState })
   },
 
+  removeItem: function(id) {
+    var newItems = this.state.items.filter((item) => {
+    return item.id != id; });
+    this.setState({ items: newItems });
+  },
+
+
   handleDelete: function(id) {
     $.ajax({
-        url: '/items/' + id + '.json',
-        type: 'DELETE',
-        success:() => {
-          console.log("success");
-        }
+      url: '/items/' + id + '.json',
+      type: 'DELETE',
+      success:() => {
+        this.removeItem(id);
+      }
     });
   },
 

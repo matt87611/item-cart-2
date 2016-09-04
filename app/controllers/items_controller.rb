@@ -15,6 +15,10 @@ class ItemsController < ApplicationController
   	respond_with item, json: item
   end
 
+  def destroy
+    respond_with Item.destroy(params[:id])
+  end
+
   private
   def item_params
     params.require(:item).permit(:id, :name, :description)
