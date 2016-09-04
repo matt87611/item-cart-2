@@ -8,6 +8,16 @@ var Body = React.createClass ({
     this.setState({ items: newState })
   },
 
+  handleDelete: function(id) {
+    $.ajax({
+        url: '/items/' + id + '.json',
+        type: 'DELETE',
+        success:() => {
+          console.log("success");
+        }
+    });
+  },
+
   render: function() {
     return (
       <div>
@@ -18,9 +28,9 @@ var Body = React.createClass ({
           <td>Description</td>
         </tr>
         <tbody>
-          <Items items={this.state.items}/>
+          <Items items={this.state.items} handleDelete={this.handleDelete}/>
         </tbody>
       </div>
     );
   }
-}); 
+});
