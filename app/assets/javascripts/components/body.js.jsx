@@ -14,7 +14,6 @@ var Body = React.createClass ({
     this.setState({ items: newItems });
   },
 
-
   handleDelete: function(id) {
     $.ajax({
       url: '/items/' + id + '.json',
@@ -23,6 +22,24 @@ var Body = React.createClass ({
         this.removeItem(id);
       }
     });
+  },
+
+  onUpdate: function(item) {
+    $.ajax({
+      url: '/items/' + item.id + '.json',
+      type: 'PUT',
+      data: { item: item },
+      success: () => {
+        this.updateItems(item);
+      }
+    })
+  },
+
+  updateItems: function(item) {
+    var items = this.state.items.filter((i) => { return i.id != item.id });
+    items.push(item);
+
+    this.setState({items: items });
   },
 
   render: function() {
@@ -35,7 +52,7 @@ var Body = React.createClass ({
           <td>Description</td>
         </tr>
         <tbody>
-          <Items items={this.state.items} handleDelete={this.handleDelete}/>
+          <Items items={this.state.items} handleDelete={this.handleDelete} onUpdate={this.onUpdate}/>
         </tbody>
       </div>
     );

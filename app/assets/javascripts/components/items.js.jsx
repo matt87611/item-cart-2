@@ -1,10 +1,14 @@
 var Items = React.createClass ({
   eachItem: function(item) {
-    return (<Item item={item} key={item.id} handleDelete={this.handleDelete}/>);
+    return (<Item item={item} key={item.id} handleDelete={this.handleDelete} onUpdate={this.onUpdate}/>);
   },
 
   handleDelete: function(id) {
     this.props.handleDelete(id);
+  },
+
+  onUpdate: function(item) {
+    this.props.onUpdate(item);
   },
 
   render: function() {
